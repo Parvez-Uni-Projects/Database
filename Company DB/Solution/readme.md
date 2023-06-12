@@ -217,7 +217,11 @@ Describing the data type for each field in relation with their respective constr
 |Project|<p>INSERT INTO `project` (`Project Id`, `Project Name`, `Start Date`, `End Date`) VALUES</p><p>(1, 'Project A', '2023-05-01', '2023-07-31'),</p><p>(2, 'Project B', '2023-06-01', '2023-08-31'),</p><p>(3, 'Project C', '2023-07-01', '2023-09-30'),</p><p>(4, 'Project D', '2023-08-01', '2023-11-30');</p>|
 |Hours Worked|<p>INSERT INTO `hours worked` (`id`, `Project Id`, `Number of hours`) VALUES</p><p>(1, 1, 20),</p><p>(1, 2, 40),</p><p>(2, 2, 50);</p>|
 |Team|<p>INSERT INTO `team` (`Team Id`, `Team name`, `Start Date`, `Team Lead Id`, `Team Manager Id`) VALUES</p><p>(1, 'Front End Team', '2022-01-01', 1, 3),</p><p>(2, 'Back end Team', '2022-01-15', 2, 4),</p><p>(3, 'LMS Team', '2022-02-01', 1, 4),</p><p>(4, 'Inventory Team', '2022-02-15', 2, 3);</p>|
-|Team Project|<p>INSERT INTO `teamproject` (`Team Id`, `Project Id`) VALUES</p><p>(1, 1),</p><p>(2, 1),</p><p>(1, 3);</p>|
+|Team Project|<p> 
+```sql 
+INSERT INTO `teamproject` (`Team Id`, `Project Id`) VALUES</p><p>(1, 1),</p><p>(2, 1),</p><p>(1, 3); 
+```
+</p>|
 
 
 
