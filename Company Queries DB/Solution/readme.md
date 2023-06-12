@@ -2,6 +2,7 @@
 
 **1. Run the provided script to create the database**
 
+The AP2_script.docx files contain was used to create the database.
 
 **2. Insert a new product.**
 
@@ -186,27 +187,11 @@ WHERE d.Year = 2018 AND d.Quarter = 2;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 14\. Display the following sale information: Office branchAddress, customerName, 
 
 productName, WarehouseDivision, SaleDate for all offices in Victoria and between 20 January 2017 and 15 May 2017.
 
-SELECT c.BranchAddress, cust.CustomerName, prod.ProductName, w.WarehouseDivision, d.SaleDate
+``` SELECT c.BranchAddress, cust.CustomerName, prod.ProductName, w.WarehouseDivision, d.SaleDate
 
 FROM SaleFacts s
 
@@ -220,7 +205,7 @@ JOIN WarehouseDim w ON s.WarehouseKey = w.WarehouseKey
 
 JOIN DateDim d ON s.DateKey = d.DateKey
 
-WHERE c.BranchState = 'Victoria' AND d.SaleDate BETWEEN '2017-01-20' AND '2017-05-15';
+WHERE c.BranchState = 'Victoria' AND d.SaleDate BETWEEN '2017-01-20' AND '2017-05-15'; ```
 
 
 
