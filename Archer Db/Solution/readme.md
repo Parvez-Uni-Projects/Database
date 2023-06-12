@@ -1,9 +1,11 @@
 ﻿<a name="_mk1zjnstkjf7"></a>Initial ER Diagram 
+![image](https://github.com/piru72/Database/assets/63257806/defad127-0199-4c4b-a049-63dc5529732a)
 
 
 <a name="_w1tndqpyikg6"></a>Reviewed ER Diagram
 
 By normalizing the ERD, we eliminated redundant data and created separate tables for related entities, following the database normalization principles. This structure allows for efficient data storage and supports the Archer and Recorder use cases.
+![image](https://github.com/piru72/Database/assets/63257806/c662efd3-4410-4ced-9ff5-fd06b625d860)
 
 
 <a name="_ej4u61dmcn2o"></a>Physical Database
@@ -14,7 +16,8 @@ ClubChampionship:
 CREATE TABLE CLUB_CHAMPIONSHIP (
   CLUB_CHAMPIONSHIP_ID INT PRIMARY KEY AUTO_INCREMENT,
   NAME VARCHAR(255) NOT NULL
-);```
+);
+```
 
 Competition:
 
@@ -26,7 +29,8 @@ CREATE TABLE COMPETITION (
   LOCATION VARCHAR(100) NOT NULL,
   CLUBCHAMPIONSHIP_ID INT,
   FOREIGN KEY (CLUBCHAMPIONSHIP_ID) REFERENCES CLUB_CHAMPIONSHIP (CLUB_CHAMPIONSHIP_ID)
-);```
+);
+```
 
 Equipment:
 
@@ -34,7 +38,8 @@ Equipment:
 CREATE TABLE EQUIPMENT (
   EQUIPMENT_ID INT PRIMARY KEY AUTO_INCREMENT,
   NAME VARCHAR(255) NOT NULL
-);```
+);
+```
 
 Distance:
 
@@ -43,7 +48,8 @@ CREATE TABLE DISTANCE (
   DISTANCE_ID INT PRIMARY KEY AUTO_INCREMENT,
   DISTANCE_VALUE INT NOT NULL,
   ENDS INT NOT NULL
-);```
+);
+```
 
 Round:
 
@@ -55,7 +61,8 @@ CREATE TABLE ROUND(
   TOTAL_ENDS INT NOT NULL,
   DATE DATE NOT NULL,
   FOREIGN KEY(COMPETITION_ID) REFERENCES COMPETITION(COMPETITIONID)
-);```
+);
+```
 
 Archer:
 
@@ -67,7 +74,8 @@ CREATE TABLE ARCHER (
   GENDER VARCHAR(10) NOT NULL,
   EQUIPMENT_ID INT DEFAULT 1 NOT NULL,
   CONSTRAINT FK_ARCHER_EQUIPMENT FOREIGN KEY (EQUIPMENT_ID) REFERENCES EQUIPMENT (EQUIPMENT_ID)
-);```
+);
+```
 
 RANGETable:
 
@@ -78,7 +86,8 @@ CREATE TABLE RANGETable (
   distance_id INT NOT NULL,
   FOREIGN KEY (round_id) REFERENCES ROUND (round_id),
   FOREIGN KEY (distance_id) REFERENCES DISTANCE (distance_id)
-);```
+);
+```
 
 TargetFace:
 
@@ -86,7 +95,8 @@ TargetFace:
 CREATE TABLE TARGET_FACE (
   TARGET_FACE_ID INT PRIMARY KEY AUTO_INCREMENT,
   SIZE INT NOT NULL
-);```
+);
+```
 
 Target:
 
@@ -97,7 +107,8 @@ CREATE TABLE TARGET (
   TARGET_FACE_ID INT,
   CONSTRAINT FK_TARGET_DISTANCE FOREIGN KEY (DISTANCE_ID) REFERENCES DISTANCE (DISTANCE_ID),
   CONSTRAINT FK_TARGET_TARGET_FACE FOREIGN KEY (TARGET_FACE_ID) REFERENCES TARGET_FACE (TARGET_FACE_ID)
-);```
+);
+```
 
 Equivalent Round:
 
@@ -108,7 +119,8 @@ CREATE TABLE EQUIVALENT_ROUND (
   valid_from DATE NOT NULL,
   valid_to DATE NOT NULL,
   FOREIGN KEY (round_id) REFERENCES ROUND (round_id)
-);```
+);
+```
 
 Score:
 
