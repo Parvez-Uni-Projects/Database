@@ -3,6 +3,8 @@
 **1. Run the provided script to create the database**
 
 The AP2_script.docx files contain was used to create the database.
+![image](https://github.com/piru72/Database/assets/63257806/becef9bf-f8b3-4a08-8f41-63b1d5cbb396)
+
 
 **2. Insert a new product.**
 ```sql
@@ -10,6 +12,8 @@ INSERT INTO ProductDim (ProductKey, ProductName, Brand, UnitPrice)
 
 VALUES (41, 'Mouse', 'Logitech', 9.99);
 ```
+![image](https://github.com/piru72/Database/assets/63257806/5278a6ba-4f2f-4f09-bffb-fcd5cbd8b3c6)
+
 
 **3. Create a new sale fact related to the new product. You can choose any  existing customer, warehouse, date and sales office.**
 ```sql
@@ -17,6 +21,7 @@ INSERT INTO SaleFacts (ID, DateKey, CompanyKey, CustomerKey, ProductKey, Warehou
 
 VALUES (503, 7,8, 9, 10, 7, 10);
 ```
+![image](https://github.com/piru72/Database/assets/63257806/87b9b406-122a-404d-9f7c-59c9f82a806f)
 
 
 
@@ -31,6 +36,7 @@ SELECT BranchAddress, BranchEmail, BranchState
 
 FROM CompanyDim;
 ```
+![image](https://github.com/piru72/Database/assets/63257806/2d404447-5921-4f67-afb5-7bb447620e64)
 
 
 
@@ -54,6 +60,7 @@ FROM CustomerDim
 
 WHERE CustomerState = 'QLD';
 ```
+![image](https://github.com/piru72/Database/assets/63257806/19d5cd14-52b2-493d-a8d8-248b55dd6b42)
 
 **6. Display the total amount of sales for all companies in 2016.**
 ```sql
@@ -67,6 +74,8 @@ JOIN ProductDim ON SaleFacts.ProductKey = ProductDim.ProductKey
 
 WHERE DateDim.Year = 2016; 
 ```
+![image](https://github.com/piru72/Database/assets/63257806/b3c75e92-d340-4058-8627-4f62b28e592e)
+
 
 **7. Display total amount of sales for each company branch separately.**
 ```sql
@@ -81,6 +90,7 @@ JOIN ProductDim p ON s.ProductKey = p.ProductKey
 GROUP BY c.BranchAddress, c.BranchState, c.BranchEmail;
 ```
 
+![image](https://github.com/piru72/Database/assets/63257806/e180c13c-3cad-4f91-9e4e-09dbd575db06)
 
 
 
@@ -98,6 +108,9 @@ JOIN CustomerDim c ON s.CustomerKey = c.CustomerKey
 
 GROUP BY p.ProductName, c.CustomerState;
 ```
+(Showing the top few out of 181 only )
+![image](https://github.com/piru72/Database/assets/63257806/07a42890-2c4e-4efc-9f9e-56275cbc4974)
+
 
 **9. Display products sold from warehouses located in New South Wales.**
 
@@ -113,7 +126,8 @@ JOIN ProductDim p ON s.ProductKey = p.ProductKey
 
 WHERE w.WarehouseRegion = 'NSW';
 ```
-
+(Showing the top few out of 161 only )
+![image](https://github.com/piru72/Database/assets/63257806/eac83d1d-10b7-4b50-8e3a-de7f3941a720)
 
 
 
@@ -130,6 +144,8 @@ JOIN CustomerDim c ON s.CustomerKey = c.CustomerKey
 JOIN DateDim d ON s.DateKey = d.DateKey;
 
 ```
+(Showing the top few out of 503 only)
+![image](https://github.com/piru72/Database/assets/63257806/85d661b5-4531-4a8e-bf4a-82fbf01c9476)
 
 
 
@@ -144,6 +160,8 @@ JOIN CustomerDim c ON s.CustomerKey = c.CustomerKey
 GROUP BY c.CustomerName;
 
 ```
+(Showing the top few out of 51 only)
+![image](https://github.com/piru72/Database/assets/63257806/a1f2e13e-9946-494b-ab3e-322d734b414c)
 
 
 
@@ -162,6 +180,8 @@ JOIN ProductDim prod ON s.ProductKey = prod.ProductKey
 JOIN DateDim d ON s.DateKey = d.DateKey;
 
 ```
+(Showing the top few out of 51 only)
+![image](https://github.com/piru72/Database/assets/63257806/6798b2de-7cfd-4742-a33b-5848d6b622f8)
 
 
 
@@ -178,6 +198,7 @@ JOIN DateDim d ON s.DateKey = d.DateKey
 
 WHERE d.Year = 2018 AND d.Quarter = 2;
 ```
+![image](https://github.com/piru72/Database/assets/63257806/0dcf40db-d034-4645-8fdb-f470075b562b)
 
 
 
@@ -203,5 +224,6 @@ JOIN DateDim d ON s.DateKey = d.DateKey
 
 WHERE c.BranchState = 'Victoria' AND d.SaleDate BETWEEN '2017-01-20' AND '2017-05-15';
 ```
+![image](https://github.com/piru72/Database/assets/63257806/f421ad48-50eb-4c1a-8cb3-664b8277699e)
 
 
