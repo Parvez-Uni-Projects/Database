@@ -174,13 +174,13 @@ JOIN DateDim d ON s.DateKey = d.DateKey;
 
 **13. Calculate a number (not amount in $) of sales in the second quarter of 2018.**
 
-SELECT COUNT(\*) AS SalesCount
+```SELECT COUNT(\*) AS SalesCount
 
 FROM SaleFacts s
 
 JOIN DateDim d ON s.DateKey = d.DateKey
 
-WHERE d.Year = 2018 AND d.Quarter = 2;
+WHERE d.Year = 2018 AND d.Quarter = 2;```
 
 
 
