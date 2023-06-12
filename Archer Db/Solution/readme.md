@@ -1,14 +1,14 @@
-﻿<a name="_mk1zjnstkjf7"></a>Initial ER Diagram 
+﻿# Initial ER Diagram 
 ![image](https://github.com/piru72/Database/assets/63257806/defad127-0199-4c4b-a049-63dc5529732a)
 
 
-<a name="_w1tndqpyikg6"></a>Reviewed ER Diagram
+# Reviewed ER Diagram
 
 By normalizing the ERD, we eliminated redundant data and created separate tables for related entities, following the database normalization principles. This structure allows for efficient data storage and supports the Archer and Recorder use cases.
 ![image](https://github.com/piru72/Database/assets/63257806/c662efd3-4410-4ced-9ff5-fd06b625d860)
 
 
-<a name="_ej4u61dmcn2o"></a>Physical Database
+# Physical Database
 
 ClubChampionship:
 
@@ -145,17 +145,17 @@ CREATE TABLE SCORE(
 ```
 
 
-<a name="_jlywofoygyd2"></a>Data Creation and Null Values
+#Data Creation and Null Values
 
 
-|<h3><a name="_wo21jak5qrp"></a>ClubChampionship</h3>|
+|<h3>ClubChampionship</h3>|
 | :-: |
 |**Field**|**Type**|**Constraint**|
 |Club\_Championship\_Id|Int|Primary Key |
 |Name|Varchar(255)|Not Null|
 
 
-|<h3><a name="_yrj4nmko38au"></a>Competition</h3>|
+|<h3>Competition</h3>|
 | :-: |
 |**Field**|**Type**|**Constraint**|
 |CompetitionId|Int|Primary Key |
@@ -166,14 +166,14 @@ CREATE TABLE SCORE(
 
 
 
-|<h3><a name="_j1q26j730n4t"></a>Equipment</h3>|
+|<h3>Equipment</h3>|
 | :-: |
 |**Field**|**Type**|**Constraint**|
 |Equipment\_Id|Int|Primary Key |
 |Name|Varchar(255)|Not Null|
 
 
-|<h3><a name="_yd5iplgkakp8"></a>Distance</h3>|
+|<h3>Distance</h3>|
 | :-: |
 |**Field**|**Type**|**Constraint**|
 |DistanceId|Int|Primary Key |
@@ -186,7 +186,7 @@ CREATE TABLE SCORE(
 
 
 
-|<h3><a name="_ehywkymnth7s"></a>Round</h3>|
+|<h3></a>Round</h3>|
 | :-: |
 |**Field**|**Type**|**Constraint**|
 |RoundId|Int|Primary Key |
@@ -197,7 +197,7 @@ CREATE TABLE SCORE(
 
 
 
-|<h3><a name="_c68iek7c331z"></a>Archer</h3>|
+|<h3></a>Archer</h3>|
 | :-: |
 |**Field**|**Type**|**Constraint**|
 |ArcherID|Int|Primary Key |
@@ -207,7 +207,7 @@ CREATE TABLE SCORE(
 |EquipmentId|int|Foreign Key(Equipment)|
 
 
-|<h3><a name="_izsubuvjn60g"></a>RangeTable</h3>|
+|<h3>RangeTable</h3>|
 | :-: |
 |**Field**|**Type**|**Constraint**|
 |RangeId|Int|Primary Key |
@@ -215,7 +215,7 @@ CREATE TABLE SCORE(
 |DistanceId|Int|Foreign Key(Distance)|
 
 
-|<h3><a name="_d8cm5f66956"></a>TargetFace</h3>|
+|<h3>TargetFace</h3>|
 | :-: |
 |**Field**|**Type**|**Constraint**|
 |TargetFaceId|Int|Primary Key |
@@ -226,7 +226,7 @@ CREATE TABLE SCORE(
 
 
 
-|<h3><a name="_vreq9b88pn5a"></a>Target</h3>|
+|<h3>Target</h3>|
 | :-: |
 |**Field**|**Type**|**Constraint**|
 |TargetId|Int|Primary Key |
@@ -234,7 +234,7 @@ CREATE TABLE SCORE(
 |TargetFaceID|Int|Foreign Key(TargetFace)|
 
 
-|<h3><a name="_o082837om75e"></a>Equivalent Round</h3>|
+|<h3>Equivalent Round</h3>|
 | :-: |
 |**Field**|**Type**|**Constraint**|
 |EquivalentRoundId|Int|Primary Key |
@@ -245,7 +245,7 @@ CREATE TABLE SCORE(
 
 
 
-|<h3><a name="_7mia3a6en60h"></a>Score</h3>|
+|<h3>Score</h3>|
 | :-: |
 |**Field**|**Type**|**Constraint**|
 |ScoreId|Int|Primary Key|
@@ -259,7 +259,7 @@ CREATE TABLE SCORE(
 |END\_NUMBER|INT|NOT NULL|
 |ArrowScore|int|Not null|
 
-<a name="_hctqv765izgn"></a>Use Cases and SQL Statements
+# Use Cases and SQL Statements
 
 <a name="_7n98yi4oii71"></a>Transactions are an important concept necessary to consider when several people access the database (potentially) at the same time. For each use case that uses DML statements (SELECT, INSERT, UPDATE, DELETE) we have to analyze whether this has to be run as a transaction. 
 
@@ -346,7 +346,7 @@ CREATE TABLE SCORE(
 
 
 
-<a name="_pz4npzli0obd"></a><a name="_w11zei3zirxw"></a><a name="_xoq76ux2dhws"></a><a name="_5rrqfiuq7rbb"></a>Recorder
+# Recorder
 
 |Use Case: |Add New Archer|
 | :- | :- |
@@ -421,7 +421,7 @@ CREATE TABLE SCORE(
 
 
 
-<a name="_25mgs8q0nypd"></a><a name="_np9qao9zc6gj"></a>Performance 
+# Performance 
 
 To determine the potential for using indexes to speed up the execution of each use case, we need to analyze the SQL statements involved and identify the columns used in the WHERE or JOIN conditions. Here are the use cases and their corresponding SQL statements:
 
