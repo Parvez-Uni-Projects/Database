@@ -76,6 +76,9 @@ Now because a developer can work on multiple projects and their hours worked sho
 ## <a name="_7z190lwtw7sh"></a>**Conceptual Model Enhanced Entity-Relationship diagram**
 
 
+![Employee ERD drawio](https://github.com/piru72/Database/assets/63257806/28b2da97-e37b-4408-99a0-c9339c8df598)
+
+
 
 ##
 ## <a name="_3z6d3qb6xc4s"></a><a name="_a4oenowbwqsl"></a> 
@@ -174,6 +177,7 @@ Describing the data type for each field in relation with their respective constr
 
 
 
+![Copy of Employee ERD drawio](https://github.com/piru72/Database/assets/63257806/e969938a-a1f7-4568-8483-00b0d1f119bb)
 
 
 
@@ -226,16 +230,26 @@ Describing the data type for each field in relation with their respective constr
 phpMyAdmin is used with xamp to run the MySql queries. The scrren shots are down below
 
 All the tables
+![image](https://github.com/piru72/Database/assets/63257806/6319b4a1-75a3-4b25-8b25-5497ab5f1370)
+
+![image](https://github.com/piru72/Database/assets/63257806/fd9e99c8-b576-47e1-9b5a-d1fa44c14750)
 
 
 
 
 Individual table
 
+![image](https://github.com/piru72/Database/assets/63257806/6dc105ad-b593-44af-aa57-a7f43473ddda)
 
+![image](https://github.com/piru72/Database/assets/63257806/4f8b795b-a6f3-4d0e-90fd-931fca96aa66)
 
+![image](https://github.com/piru72/Database/assets/63257806/f6cfc832-b5ab-472d-a2c8-f37bce84caa3)
 
+![image](https://github.com/piru72/Database/assets/63257806/2f527ccb-7c59-4d60-b123-e2172445223d)
+![image](https://github.com/piru72/Database/assets/63257806/434f6780-f259-49f2-94d1-5aeb04f3f4da)
 
+![image](https://github.com/piru72/Database/assets/63257806/56b14fed-268b-4287-a922-d72b971c73b7)
+![image](https://github.com/piru72/Database/assets/63257806/1097e579-67f3-48e8-b09c-c5cb6c29b977)
 
 
 
