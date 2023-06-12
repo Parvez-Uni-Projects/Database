@@ -203,7 +203,7 @@ CREATE TABLE employee (
   `Type` varchar(40) NOT NULL,
   PRIMARY KEY (`Id`)
 );
-
+```
 Developer
 
 ```sql
