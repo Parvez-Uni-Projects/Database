@@ -97,8 +97,6 @@ JOIN ProductDim p ON s.ProductKey = p.ProductKey
 JOIN CustomerDim c ON s.CustomerKey = c.CustomerKey
 
 GROUP BY p.ProductName, c.CustomerState;
-
-(Showing the top few out of 181 only )
 ```
 
 **9. Display products sold from warehouses located in New South Wales.**
@@ -131,7 +129,6 @@ JOIN CustomerDim c ON s.CustomerKey = c.CustomerKey
 
 JOIN DateDim d ON s.DateKey = d.DateKey;
 
-(Showing the top few out of 503 only)
 ```
 
 
@@ -146,7 +143,6 @@ JOIN CustomerDim c ON s.CustomerKey = c.CustomerKey
 
 GROUP BY c.CustomerName;
 
-(Showing the top few out of 51 only)
 ```
 
 
@@ -165,7 +161,6 @@ JOIN ProductDim prod ON s.ProductKey = prod.ProductKey
 
 JOIN DateDim d ON s.DateKey = d.DateKey;
 
-(Showing the top few out of 51 only)
 ```
 
 
@@ -189,9 +184,7 @@ WHERE d.Year = 2018 AND d.Quarter = 2;
 
 
 
-14. Display the following sale information: Office branchAddress, customerName, 
-
-productName, WarehouseDivision, SaleDate for all offices in Victoria and between 20 January 2017 and 15 May 2017.
+14. Display the following sale information: Office branchAddress, customerName, productName, WarehouseDivision, SaleDate for all offices in Victoria and between 20 January 2017 and 15 May 2017.
 
 ```sql
  SELECT c.BranchAddress, cust.CustomerName, prod.ProductName, w.WarehouseDivision, d.SaleDate
