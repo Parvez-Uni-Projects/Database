@@ -193,19 +193,89 @@ Describing the data type for each field in relation with their respective constr
 1. Creating the tables
 
 
+Employee
 
-|Table  Name|Query|
-| :- | :- |
-|Employee|<p>CREATE TABLE employee (</p><p>`  `Id int(11) UNSIGNED NOT NULL,</p><p>`  `Name varchar(50) NOT NULL,</p><p>`  `Salary int(11) NOT NULL,</p><p>`  `Type varchar(40) NOT NULL,</p><p>`   `PRIMARY KEY( Id)</p><p>);</p>|
-|Developer|<p>CREATE TABLE developer (</p><p>`  `Id int(11) UNSIGNED NOT NULL,</p><p>`  `Skill varchar(50) NOT NULL,</p><p>`  `Position varchar(50) NOT NULL,</p><p>`   `PRIMARY KEY( Id),</p><p>`   `FOREIGN KEY (Id) REFERENCES employee(Id)</p><p>);</p>|
-|Development Manager|<p>CREATE TABLE `development manager` (</p><p>`  `Id int(11) UNSIGNED NOT NULL,</p><p>`  ``product type` varchar(50) NOT NULL,<br>`   `PRIMARY KEY( Id),</p><p>`   `FOREIGN KEY (Id) REFERENCES employee(Id)</p><p>);</p>|
-|Project|<p>CREATE TABLE project (</p><p>`  ``Project Id` int(11) UNSIGNED NOT NULL,</p><p>`  ``Project Name` varchar(50) NOT NULL,</p><p>`  ``Start Date` date NOT NULL,</p><p>`  ``End Date` date NOT NULL,</p><p>`   `PRIMARY KEY(`Project Id`)</p><p>);</p>|
-|Hours Worked|<p>CREATE TABLE `hours worked` (</p><p>`  `Id int(11) UNSIGNED NOT NULL,</p><p>`  ``Project Id` int(11) UNSIGNED NOT NULL,</p><p>`  ``Number of hours` int(11) UNSIGNED NOT NULL,</p><p>`   `FOREIGN KEY (Id) REFERENCES employee(Id),</p><p>`   `FOREIGN KEY (`Project Id`) REFERENCES project(`Project Id`)</p><p>);</p><p></p>|
-|Team|<p>CREATE TABLE `team` (</p><p>`  ``Team Id` int(11) UNSIGNED NOT NULL,</p><p>`  ``Team name` varchar(50) NOT NULL,</p><p>`  ``Start Date` date NOT NULL,</p><p>`  ``Team Lead Id` int(11) UNSIGNED NOT NULL,</p><p>`  ``Team Manager Id` int(11) UNSIGNED NOT NULL,</p><p>` 	`PRIMARY KEY(`Team Id`),</p><p>`	`FOREIGN KEY (`Team Manager Id`) REFERENCES `development manager`(Id),</p><p>`	`FOREIGN KEY (`Team Lead Id`) REFERENCES developer(Id)</p><p></p><p>) ;</p><p></p><p></p>|
-|Team Project|<p>CREATE TABLE `teamproject` (</p><p>`  ``Team Id` int(11) UNSIGNED NOT NULL,</p><p>`  ``Project Id` int(11) UNSIGNED NOT NULL,</p><p>FOREIGN KEY (`Project Id`) REFERENCES project(`Project Id`),</p><p>FOREIGN KEY (`Team Id`) REFERENCES team(`Team Id`)</p><p>);</p><p></p><p></p>|
+```sql
+CREATE TABLE employee (
+  `Id` int(11) UNSIGNED NOT NULL,
+  `Name` varchar(50) NOT NULL,
+  `Salary` int(11) NOT NULL,
+  `Type` varchar(40) NOT NULL,
+  PRIMARY KEY (`Id`)
+);
+
+Developer
+
+```sql
+CREATE TABLE developer (
+  `Id` int(11) UNSIGNED NOT NULL,
+  `Skill` varchar(50) NOT NULL,
+  `Position` varchar(50) NOT NULL,
+  PRIMARY KEY (`Id`),
+  FOREIGN KEY (`Id`) REFERENCES employee(`Id`)
+);
+```
+
+Development Manager
+
+```sql
+CREATE TABLE `development manager` (
+  `Id` int(11) UNSIGNED NOT NULL,
+  `product type` varchar(50) NOT NULL,
+  PRIMARY KEY (`Id`),
+  FOREIGN KEY (`Id`) REFERENCES employee(`Id`)
+);
+```
+
+Project
+
+```sql
+CREATE TABLE project (
+  `Project Id` int(11) UNSIGNED NOT NULL,
+  `Project Name` varchar(50) NOT NULL,
+  `Start Date` date NOT NULL,
+  `End Date` date NOT NULL,
+  PRIMARY KEY (`Project Id`)
+);
+```
+
+Hours Worked
+
+```sql
+CREATE TABLE `hours worked` (
+  `Id` int(11) UNSIGNED NOT NULL,
+  `Project Id` int(11) UNSIGNED NOT NULL,
+  `Number of hours` int(11) UNSIGNED NOT NULL,
+  FOREIGN KEY (`Id`) REFERENCES employee(`Id`),
+  FOREIGN KEY (`Project Id`) REFERENCES project(`Project Id`)
+);
+```
+Team
+
+```sql
+CREATE TABLE `team` (
+  `Team Id` int(11) UNSIGNED NOT NULL,
+  `Team name` varchar(50) NOT NULL,
+  `Start Date` date NOT NULL,
+  `Team Lead Id` int(11) UNSIGNED NOT NULL,
+  `Team Manager Id` int(11) UNSIGNED NOT NULL,
+  PRIMARY KEY (`Team Id`),
+  FOREIGN KEY (`Team Manager Id`) REFERENCES `development manager`(`Id`),
+  FOREIGN KEY (`Team Lead Id`) REFERENCES developer(`Id`)
+);
+```
 
 
+Team Project
 
+```sql
+CREATE TABLE `teamproject` (
+  `Team Id` int(11) UNSIGNED NOT NULL,
+  `Project Id` int(11) UNSIGNED NOT NULL,
+  FOREIGN KEY (`Project Id`) REFERENCES project(`Project Id`),
+  FOREIGN KEY (`Team Id`) REFERENCES team(`Team Id`)
+);
+```
 
 2\. Populating the tables
 
